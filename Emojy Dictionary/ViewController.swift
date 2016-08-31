@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var emojis = ["😀","😬","🐦","😱","💩","😡","😷","🤖","💀","😍"]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emojyTableView.dataSource = self
@@ -35,6 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let emoji = emojis[indexPath.row]
         performSegue(withIdentifier: "moveSegue", sender: emoji)
     }
@@ -42,6 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         let defVC = segue.destinationViewController as! DefinitionVC
         defVC.emoji = sender as! String
+        defVC.definition = defVC.newEmojis[defVC.emoji]!
     }
     
     override func prefersStatusBarHidden() -> Bool {
