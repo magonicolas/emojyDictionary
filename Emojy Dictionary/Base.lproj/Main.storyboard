@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emojy_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Emojy_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="914" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--DefinitionVC-->
         <scene sceneID="9QY-Rr-pX0">
             <objects>
-                <viewController id="kll-9M-mEY" sceneMemberID="viewController">
+                <viewController id="kll-9M-mEY" customClass="DefinitionVC" customModule="Emojy_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aJy-FR-sqO"/>
                         <viewControllerLayoutGuide type="bottom" id="NDE-FM-x7u"/>
@@ -71,6 +71,9 @@
                             <constraint firstItem="TRO-1d-fQT" firstAttribute="centerX" secondItem="CEF-vk-qki" secondAttribute="centerX" id="zIM-Ka-SWz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="PsU-Jt-M4u" id="Q4h-WD-TRd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiw-RW-9u7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
