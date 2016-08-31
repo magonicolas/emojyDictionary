@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var emojyTableView: UITableView!
     
+    var emojis = ["😀","😬","🐦","😱","💩","😡","😷","🤖","💀","😍"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emojyTableView.dataSource = self
@@ -23,13 +25,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return emojis.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "How u Doing?"
+        cell.textLabel?.text = emojis[indexPath.row]
         return cell
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
 
